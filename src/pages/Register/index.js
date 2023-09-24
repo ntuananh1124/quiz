@@ -32,13 +32,7 @@ export default function Register() {
             }
             const res = await register(user);
             if (res) {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                alert("Đăng kí tài khoản thành công")
                 // console.log(res);
                 navigate("/login");
             }
