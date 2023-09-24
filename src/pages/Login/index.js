@@ -16,25 +16,27 @@ export default function Login() {
         const email = e.target[0].value;
         const password = e.target[1].value;
         const userArray = await login(email, password);
-        if (userArray.length > 0) { // check xem co tk hoac mk do khong
-            // console.log(userArray);
-            setCookie("id", userArray[0].id, 1)
-            setCookie("fullName", userArray[0].fullName, 1)
-            setCookie("email", userArray[0].email, 1)
-            setCookie("token", userArray[0].token, 1)
-            setCookie("avatar", userArray[0].avatar, 1)
-            dispatch(checkLogin(true));
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Login successfully !',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            navigate("/");
-        }
-        else {
-            Swal.fire('Wrong account or password');
+        if (userArray) {
+            if (userArray.length > 0) { // check xem co tk hoac mk do khong
+                // console.log(userArray);
+                setCookie("id", userArray[0].id, 1)
+                setCookie("fullName", userArray[0].fullName, 1)
+                setCookie("email", userArray[0].email, 1)
+                setCookie("token", userArray[0].token, 1)
+                setCookie("avatar", userArray[0].avatar, 1)
+                dispatch(checkLogin(true));
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login successfully !',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate("/");
+            }
+            else {
+                Swal.fire('Wrong account or password');
+            }
         }
     }
 
