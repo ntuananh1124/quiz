@@ -17,29 +17,37 @@ export default function Register() {
         const password = e.target[2].value;
         const avatar = e.target[3].value;
         const token = generateToken(20);
-        console.log(e)
+        // console.log(e)
         
         // Check xem tai khoan da ton tai hay chua
         const dataApi = await checkExist("email", email);
 
-        if (dataApi.length === 0) {
-            const user = {
-                fullName: fullName,
-                email: email,
-                password: password,
-                avatar: avatar,
-                token: token
+        if (dataApi) {
+            if (dataApi.length === 0) {
+                const user = {
+                    fullName: fullName,
+                    email: email,
+                    password: password,
+                    avatar: avatar,
+                    token: token
+                }
+                const res = await register(user);
+                if (res) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    // console.log(res);
+                    navigate("/login");
+                }
             }
-            const res = await register(user);
-            if (res) {
-                alert("Đăng kí tài khoản thành công")
-                // console.log(res);
-                navigate("/login");
+            else {
+                // console.log(dataApi);
+                Swal.fire('This email already exists');
             }
-        }
-        else {
-            // console.log(dataApi);
-            Swal.fire('This email already exists');
         }
     }
 
