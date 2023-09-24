@@ -31,15 +31,17 @@ export default function Register() {
                 token: token
             }
             const res = await register(user);
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Successfully',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            // console.log(res);
-            navigate("/login");
+            if (res) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // console.log(res);
+                navigate("/login");
+            }
         }
         else {
             // console.log(dataApi);
