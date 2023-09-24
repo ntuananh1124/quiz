@@ -1,0 +1,68 @@
+@import "../../scss/mixins";
+
+.answer--false {
+    @include correct-false(rgb(255,0,0))
+}
+
+.answer--correct {
+    @include correct-false(green);
+}
+
+.question {
+    &__name {
+        display: inline;
+    }
+}
+
+.do-again {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: orange;
+    padding: 5px 7px;
+    border: none;
+    margin-top: 30px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.btn {
+    &__back {
+        @include btn(orange);
+    }
+}
+
+.result {
+    &__name {
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    &__contents {
+        display: inline-flex;
+        column-gap: 15px;
+
+        span {
+            font-weight: 600;
+        }
+
+    }
+
+    &__false {
+        color: red;
+    }
+    
+    &__total {
+        font-weight: 800;
+    }
+    
+    &__selected {
+        color: red;
+    }
+    
+    &__correct {
+        color: green;
+    }
+}

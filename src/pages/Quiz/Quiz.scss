@@ -1,0 +1,10 @@
+@import "../../scss/mixins";
+
+.submit-btn {
+    @include btn(orange);
+    margin-top: 30px;
+
+    &:hover {
+        background-color: rgba(202, 134, 6, 0.968);
+    }
+}

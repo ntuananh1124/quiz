@@ -1,0 +1,10 @@
+.go-back {
+    &__btn {
+        border: none;
+        background-color: transparent;
+        color: orange;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../scss/mixins';
+
+.topic {
+    @include flex-center();
+
+    table {
+        border: 1px solid black;
+
+        th {
+            // border: 1px solid black;
+            background-color: aliceblue;
+            padding: 5px;
+        }
+
+        td {
+            background-color: rgb(230, 230, 230);
+        }
+    }
+}

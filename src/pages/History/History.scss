@@ -1,0 +1,50 @@
+@import "../../scss/mixins";
+
+.show-btn {
+    border-radius: 10px;
+    border: none;
+    background-color: orange;
+    cursor: pointer;
+    padding: 7px 10px;
+    transition: 0.3s ease;
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgba(194, 116, 0, 0.674);
+    }
+}
+
+.do-again-btn {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(16, 167, 16);
+    cursor: pointer;
+    padding: 7px 10px;
+    transition: 0.3s ease;
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover {
+        background-color: green;
+    }
+}
+
+.history {
+    @include flex-center();
+}
+
+.btn {
+    @include btn(orange);
+}
+
+.content {
+    @include flex-center();
+    flex-direction: column;
+}

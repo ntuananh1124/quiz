@@ -1,0 +1,40 @@
+@import "../../scss/mixins";
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        width: 400px;
+
+        input {
+            border-radius: 5px;
+            outline: 0.5px solid black;
+            border: none;
+            background-color: whitesmoke;
+            padding: 7px 15px;
+        }
+
+        a {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        button {
+            width: fit-content;
+            align-self: center;
+            border: none;
+            @include btn(orange);
+            margin-top: 10px;
+
+            &:hover {
+                background-color: rgb(182, 119, 0);
+            }
+        }
+    }
+}
